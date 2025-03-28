@@ -8,14 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "postinstall": "if [ \"$VERCEL\" != \"1\" ]; then husky install; fi",
     "format": "prettier --write .",
     "commit": "commitment --edit",
     "test": "echo \"No tests specified\""
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
   },
   "lint-staged": {
     "*.js": [
