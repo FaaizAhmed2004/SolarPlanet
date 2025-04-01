@@ -15527,3 +15527,47 @@
         "SERVER_URL": "http://localhost:3000"
     }
 }
+{
+    "level": "INFO",
+    "timestamp": "2025-03-31T23:57:24.037Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-03-31T23:57:24.049Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-03-31T23:57:24.050Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-01T08:02:51.998Z",
+    "message": "Database connection established",
+    "meta": {
+        "CONNECTION_NAME": "test"
+    }
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-01T08:02:52.018Z",
+    "message": "Rate limiter initiated",
+    "meta": {}
+}
+{
+    "level": "INFO",
+    "timestamp": "2025-04-01T08:02:52.020Z",
+    "message": "Application started on port 3000",
+    "meta": {
+        "SERVER_URL": "http://localhost:3000"
+    }
+}
