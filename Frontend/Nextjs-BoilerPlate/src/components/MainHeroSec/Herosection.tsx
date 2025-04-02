@@ -48,7 +48,7 @@ export default function MainHero() {
 
         {/* Logo and Badge */}
         <div className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center space-x-4">
-          <Image src="/images/solarplanet_logo.jpg" alt="logo" width={120} height={50} className="object-contain" />
+          <Image src="/images/solarplanetlogo.png" alt="logo" width={120} height={50} className="object-contain" />
           <Image src="/images/Winiaco.png" alt="WINAICO Approved Retailer" width={120} height={50} className="object-contain" />
         </div>
 

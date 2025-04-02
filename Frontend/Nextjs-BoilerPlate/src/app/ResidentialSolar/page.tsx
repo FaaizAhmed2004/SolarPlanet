@@ -22,12 +22,12 @@ export default function Residentialsolar() {
       {/* Header */}
       <header className="bg-white py-4 px-6 flex justify-between items-center border-b">
         <div className="flex items-center gap-4">
-          <div className="relative h-12 w-40">
+          <div className="flex items-center justify-center h-12 w-40">
             <Image
-              src="/images/solarplanet_logo.jpg"
+              src="/images/solarplanetlogo.png"
               alt=" Solar Solutions Australia"
-              width={60}
-              height={20}
+              width={160}
+              height={10}
               className="object-contain"
             />
           </div>

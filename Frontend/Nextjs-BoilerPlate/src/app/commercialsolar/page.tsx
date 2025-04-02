@@ -20,12 +20,12 @@ export default function CommercialSolar  () {
       {/* Header */}
       <header className="bg-white py-4 px-6 flex justify-between items-center border-b">
         <div className="flex items-center gap-4">
-          <div className="relative h-12 w-40">
+          <div className="flex items-center justify-center h-12 w-40">
             <Image
-              src=""
+              src="/images/solarplanetlogo.png"
               alt="Commercial Solar Solutions"
               width={160}
-              height={48}
+              height={10}
               className="object-contain"
             />
           </div>
