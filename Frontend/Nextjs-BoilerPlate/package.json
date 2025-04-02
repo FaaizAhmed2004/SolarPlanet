@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-"prepare": "if [ -d .git ]; then husky install; fi",
-"postinstall": "if [ \"$VERCEL\" != \"1\" ]; then husky install; fi",
-
+    "prepare": "if [ -d .git ]; then husky install; fi",
+    "postinstall": "if [ \"$VERCEL\" != \"1\" ]; then husky install; fi",
     "format": "prettier --write .",
     "commit": "commitment --edit",
     "test": "echo \"No tests specified\""
@@ -36,7 +35,6 @@
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "eslint": "^9.23.0",
     "framer-motion": "^12.5.0",
     "glob": "^11.0.1",
     "lucide-react": "^0.482.0",
@@ -59,6 +57,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "devmoji": "^2.3.0",
+    "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.25",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
