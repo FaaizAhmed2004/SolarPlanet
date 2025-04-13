@@ -55,7 +55,7 @@ export default function QuoteRequestForm() {
     try {
       const formattedData = { ...formData } // ✅ Keep interests in original format
 
-      const response = await fetch("http://localhost:3000/v1/Quote", {
+      const response = await fetch("https://solar-ten-liart.vercel.app//v1/Quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
