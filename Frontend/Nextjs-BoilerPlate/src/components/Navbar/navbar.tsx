@@ -40,14 +40,14 @@ const Navbar = () => {
             {/* Brand/Logo Area */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center px-2 sm:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 cursor-pointer">
-                <Home size={16} className="sm:mr-2 text-primary" />
-                <span className="hidden sm:inline font-bold text-base text-primary">Energy Planet</span>
+                <Home size={18} className="sm:mr-2 text-primary" />
+                <span className="hidden sm:inline font-bold text-lg xl:text-xl text-primary">Energy Planet</span>
               </Link>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-1">
-              <Link href="/ResidentialSolar" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs xl:text-sm cursor-pointer">
+              <Link href="/ResidentialSolar" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-sm xl:text-base cursor-pointer">
                 Residential Solar
               </Link>
 
@@ -55,33 +55,33 @@ const Navbar = () => {
                 <button 
                   type="button"
                   onClick={toggleBatteryDropdown} 
-                  className="flex items-center px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs xl:text-sm cursor-pointer"
+                  className="flex items-center px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-sm xl:text-base cursor-pointer"
                 >
                   Battery Storage
-                  <ChevronDown size={14} className="ml-1" />
+                  <ChevronDown size={16} className="ml-1" />
                 </button>
 
                 {batteryDropdownOpen && (
-                  <div className="absolute left-0 bottom-full z-dropdown w-48 bg-card text-card-foreground shadow-xl rounded-lg border border-border overflow-hidden mb-1 layout-safe">
-                    <Link href="/BatteryStorage" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                  <div className="absolute left-0 top-full z-dropdown w-52 bg-card text-card-foreground shadow-xl rounded-lg border border-border overflow-hidden mt-1 layout-safe">
+                    <Link href="/BatteryStorage" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       Benefits of battery storage
                     </Link>
-                    <Link href="/teslapowerwall" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/teslapowerwall" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       Tesla Powerwall 3
                     </Link>
                   </div>
                 )}
               </div>
 
-              <Link href="/commercialsolar" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs xl:text-sm cursor-pointer">
+              <Link href="/commercialsolar" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-sm xl:text-base cursor-pointer">
                 Commercial Solar
               </Link>
 
-              <Link href="/WINAICOsolar" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs xl:text-sm cursor-pointer">
+              <Link href="/WINAICOsolar" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-sm xl:text-base cursor-pointer">
                 WINAICO Solar
               </Link>
 
-              <Link href="/Heatpump" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs xl:text-sm cursor-pointer">
+              <Link href="/Heatpump" className="px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-sm xl:text-base cursor-pointer">
                 Heat Pumps
               </Link>
 
@@ -89,33 +89,33 @@ const Navbar = () => {
                 <button 
                   type="button"
                   onClick={toggleInfoDropdown} 
-                  className="flex items-center px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs xl:text-sm cursor-pointer"
+                  className="flex items-center px-3 xl:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-sm xl:text-base cursor-pointer"
                 >
                   More
-                  <ChevronDown size={14} className="ml-1" />
+                  <ChevronDown size={16} className="ml-1" />
                 </button>
 
                 {infoDropdownOpen && (
-                  <div className="absolute left-0 bottom-full z-dropdown w-48 bg-card text-card-foreground shadow-xl rounded-lg border border-border overflow-hidden mb-1 layout-safe">
-                    <Link href="/about" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                  <div className="absolute left-0 top-full z-dropdown w-52 bg-card text-card-foreground shadow-xl rounded-lg border border-border overflow-hidden mt-1 layout-safe">
+                    <Link href="/about" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       About Us
                     </Link>
-                    <Link href="/Contact" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/Contact" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       Contact
                     </Link>
-                    <Link href="/Faq" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/Faq" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       FAQ
                     </Link>
-                    <Link href="/electrify_home" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/electrify_home" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       Electrify Home
                     </Link>
-                    <Link href="/ev-charger" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/ev-charger" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       EV Charger
                     </Link>
-                    <Link href="/case-study" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/case-study" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       Case Studies
                     </Link>
-                    <Link href="/Login" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm cursor-pointer">
+                    <Link href="/Login" className="block px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 text-sm font-medium cursor-pointer">
                       Login
                     </Link>
                   </div>
@@ -128,9 +128,9 @@ const Navbar = () => {
               {/* Phone Number */}
               <a 
                 href="tel:+61433866320" 
-                className="hidden sm:flex items-center gap-2 px-3 sm:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-semibold text-xs sm:text-sm text-primary cursor-pointer"
+                className="hidden sm:flex items-center gap-2 px-3 sm:px-4 py-2 hover:bg-accent/20 rounded-lg transition-all duration-200 font-semibold text-sm sm:text-base text-primary cursor-pointer"
               >
-                <Phone size={16} />
+                <Phone size={18} />
                 <span className="hidden md:inline">+61 433 866 320</span>
               </a>
 

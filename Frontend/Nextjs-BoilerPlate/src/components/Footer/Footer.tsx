@@ -121,11 +121,61 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Partners/Brands Section */}
+      <div className="bg-muted/30 py-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-center text-sm font-semibold text-readable mb-4 uppercase tracking-wider">
+            Our Trusted Partners & Brands
+          </h3>
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
+            <Image
+              src="/images/fronus.png"
+              alt="Fronius"
+              width={120}
+              height={60}
+              className="h-8 sm:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <Image
+              src="/images/Winiaco.png"
+              alt="WINAICO"
+              width={120}
+              height={60}
+              className="h-8 sm:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <Image
+              src="/images/smart_energy.png"
+              alt="Smart Energy"
+              width={120}
+              height={60}
+              className="h-8 sm:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            />
+            <Image
+              src="/images/tradie_wraps.png"
+              alt="Tradie Wraps"
+              width={120}
+              height={60}
+              className="h-8 sm:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Main footer content */}
       <div className="container mx-auto py-8 sm:section-padding px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Column 1 - Company Info */}
           <div className="space-content">
+            {/* Company Logo */}
+            <div className="mb-4">
+              <Image
+                src="/images/solarplanetlogo.png"
+                alt="Solar Planet Australia Logo"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+              />
+            </div>
+            
             <h2 className="text-sm font-bold uppercase tracking-wider">The Energy Planet Australia</h2>
             <p className="text-sm">
               The Energy Planet Australia is a fully owned and operated Australian company that employs well-trained
@@ -136,17 +186,37 @@ export default function Footer() {
               some of the best quality products on the market.
             </p>
 
+            {/* Certification Images */}
             <div className="pt-4">
-              <div className="flex flex-wrap gap-3 text-sm text-readable">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
-                  ✓ Approved Seller
-                </span>
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">
-                  ✓ CEC Accredited
-                </span>
-                <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full font-medium">
-                  ✓ Quality Assured
-                </span>
+              <div className="flex flex-wrap gap-3 items-center">
+                <Image
+                  src="/images/approvedSeller.png"
+                  alt="Approved Seller"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/accredential.png"
+                  alt="CEC Accredited"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/solarcouncal.png"
+                  alt="Solar Council"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <Image
+                  src="/images/energycouncial.png"
+                  alt="Energy Council"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
               </div>
             </div>
           </div>
@@ -265,10 +335,29 @@ export default function Footer() {
       <div className="border-t border-border py-4">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
-            <div className="flex space-x-3 text-sm text-readable">
-              <span className="bg-muted px-3 py-1 rounded font-medium">PayPal</span>
-              <span className="bg-muted px-3 py-1 rounded font-medium">Mastercard</span>
-              <span className="bg-muted px-3 py-1 rounded font-medium">Visa</span>
+            <span className="text-xs text-readable mr-2">We Accept:</span>
+            <div className="flex space-x-3 items-center">
+              <Image
+                src="/images/paypal.png"
+                alt="PayPal"
+                width={60}
+                height={30}
+                className="h-6 w-auto"
+              />
+              <Image
+                src="/images/mastercard.jpeg"
+                alt="Mastercard"
+                width={60}
+                height={30}
+                className="h-6 w-auto rounded"
+              />
+              <Image
+                src="/images/visa.png"
+                alt="Visa"
+                width={60}
+                height={30}
+                className="h-6 w-auto"
+              />
             </div>
           </div>
 
