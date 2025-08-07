@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
     const password = formData.get("password") as string;
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/admin/login`, {
+      const response = await fetch(`https://solar-ten-liart.vercel.app/v1/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

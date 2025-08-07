@@ -15,7 +15,7 @@ app.use(cookieParser())
 app.use(
     cors({
         methods: ['GET', 'POST', 'DELETE', 'OPTIONS', 'HEAD', 'PUT', 'PATCH'],
-        origin: ['http://localhost:3001'],
+        origin: ['https://solar-ten-liart.vercel.app/'],
         credentials: true
     })
 )
