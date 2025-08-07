@@ -21,7 +21,7 @@ export default function HeroSection() {
   return (
     <div className="w-full">
       {/* Top announcement bar */}
-      <div className="w-full bg-white text-center py-3 border-b border-gray-200">
+      <div className="w-full bg-background text-center py-3 border-b border-border">
         <div className="container mx-auto px-4">
           <p className="font-medium">
             <span className="block md:inline">We are not just another solar company...</span>
@@ -47,7 +47,7 @@ export default function HeroSection() {
                 <span className="block">best quality products available</span>
                 <span className="block">in Australia</span>
               </h1>
-              <Button className="bg-amber-500 hover:bg-amber-600 text-black mt-4">
+              <Button className="bg-primary hover:bg-amber-600 text-black mt-4">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -56,7 +56,7 @@ export default function HeroSection() {
       </div>
 
       {/* Certification section */}
-      <div className="bg-white py-8">
+      <div className="bg-background py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-8">
             <Image
@@ -95,11 +95,11 @@ export default function HeroSection() {
       </div>
 
       {/* Benefits section */}
-      <div className="bg-white py-12">
+      <div className="bg-background section-padding">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6">
                 How can going solar benefit your family?
               </h2>
               <ul className="space-y-3">
@@ -132,12 +132,12 @@ export default function HeroSection() {
         <div className="relative h-[300px] md:h-[400px] group">
           <Image src="/placeholder.svg?height=400&width=600" alt="Solar installation" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <Button className="bg-amber-500 hover:bg-amber-600 text-black">Get a quote</Button>
+            <Button className="bg-primary hover:bg-amber-600 text-black">Get a quote</Button>
           </div>
           <div className="absolute bottom-4 left-4">
             <Image
               src="/placeholder.svg?height=40&width=200"
-              alt="Total Solar Solutions"
+              alt="The Energy Planet"
               width={200}
               height={40}
               className="object-contain"
@@ -152,7 +152,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <div className="text-center">
               <p className="text-white font-bold mb-2">Visit our showroom</p>
-              <Button className="bg-amber-500 hover:bg-amber-600 text-black">Get directions</Button>
+              <Button className="bg-primary hover:bg-amber-600 text-black">Get directions</Button>
             </div>
           </div>
         </div>

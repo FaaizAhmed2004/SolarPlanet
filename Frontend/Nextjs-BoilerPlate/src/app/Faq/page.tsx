@@ -13,10 +13,10 @@ export default function FAQSectionCumulative() {
     {
       id: "panels",
       title: "Solar Panels & Systems",
-      color: "text-red-600",
-      bgColor: "bg-white",
+      color: "text-primary",
+      bgColor: "bg-background",
       borderColor: "border-red-600",
-      activeBgColor: "bg-white",
+      activeBgColor: "bg-background",
       questions: [
         {
           question: "What types of solar panels do you offer?",
@@ -39,9 +39,9 @@ export default function FAQSectionCumulative() {
       id: "installations",
       title: "Solar Installations",
       color: "text-white",
-      bgColor: "bg-amber-400",
+      bgColor: "bg-accent",
       borderColor: "border-amber-400",
-      activeBgColor: "bg-amber-500",
+      activeBgColor: "bg-primary",
       questions: [
         {
           question: "How long does a solar installation take?",
@@ -132,11 +132,11 @@ export default function FAQSectionCumulative() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image src="/images/residential_solar_bg.jpg" alt="Background" fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="hero-overlay"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <div className="relative z-10 page-container section-padding md:py-24">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">Frequently Asked Questions</h2>
 
         {/* Category Tabs */}
@@ -170,31 +170,31 @@ export default function FAQSectionCumulative() {
         </div>
 
         {/* Cumulative FAQ Content */}
-        <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 transition-all duration-500">
+        <div className="bg-background rounded-lg shadow-xl p-6 md:p-8 transition-all duration-500">
           {displayedContent.length === 0 ? (
-            <p className="text-center text-gray-500">Select a category to view FAQs</p>
+            <p className="text-center text-subtle">Select a category to view FAQs</p>
           ) : (
             <div className="space-y-12">
               {displayedContent.map((content, contentIndex) => {
                 const categoryData = faqCategories.find((cat) => cat.id === content.categoryId)
                 return (
-                  <div key={contentIndex} className="space-y-6">
+                  <div key={contentIndex} className="space-content">
                     <h3
                       className={`text-2xl font-bold ${
                         categoryData?.id === "panels"
-                          ? "text-red-600"
+                          ? "text-primary"
                           : categoryData?.id === "installations"
                             ? "text-amber-500"
-                            : "text-gray-800"
+                            : "text-foreground"
                       }`}
                     >
                       {categoryData?.title}
                     </h3>
-                    <div className="space-y-6">
+                    <div className="space-content">
                       {content.questions.map((faq, faqIndex) => (
-                        <div key={faqIndex} className="border-b border-gray-200 pb-6 last:border-0 last:pb-0">
-                          <h4 className="text-lg font-semibold text-gray-800 mb-3">{faq.question}</h4>
-                          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                        <div key={faqIndex} className="border-b border-border pb-6 last:border-0 last:pb-0">
+                          <h4 className="text-lg font-semibold text-foreground mb-3">{faq.question}</h4>
+                          <p className="text-readable text-pretty leading-relaxed">{faq.answer}</p>
                         </div>
                       ))}
                     </div>

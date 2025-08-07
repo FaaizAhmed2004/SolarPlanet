@@ -59,11 +59,11 @@ export default function TeslaPowerwallPage() {
           <div className="absolute bottom-0 left-0 right-0 flex flex-col md:flex-row justify-center">
             {/* What is Tesla Powerwall 3 Card */}
             <div
-              className="w-full md:w-1/2 bg-white p-6 cursor-pointer flex justify-between items-center"
+              className="w-full md:w-1/2 bg-background p-6 cursor-pointer flex justify-between items-center"
               onClick={() => scrollToSection("what")}
             >
-              <h2 className="text-red-600 font-medium text-lg">What is Tesla Powerwall 3?</h2>
-              <ChevronDown className="h-5 w-5 text-red-600" />
+              <h2 className="text-primary font-medium text-lg">What is Tesla Powerwall 3?</h2>
+              <ChevronDown className="h-5 w-5 text-primary" />
             </div>
   
             {/* FAQs Card */}
@@ -78,59 +78,59 @@ export default function TeslaPowerwallPage() {
         </div>
   
         {/* Content Sections */}
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 section-padding">
           {/* What is Tesla Powerwall 3 Section */}
           <div
             ref={whatSectionRef}
             className={`mb-16 transition-opacity duration-500 ${activeSection === "what" ? "opacity-100" : activeSection === null ? "opacity-100" : "opacity-50"}`}
           >
-            <h2 className="text-3xl font-bold text-red-600 mb-6 flex items-center">What is Tesla Powerwall 3?</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6 flex items-center">What is Tesla Powerwall 3?</h2>
   
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <p className="text-gray-700 mb-4 text-lg">
+                <p className="text-readable mb-4 text-lg">
                   The Tesla Powerwall 3 is the latest home battery system from Tesla Energy. It stores electricity
                   generated from solar panels or from the grid during off-peak hours when rates are lower.
                 </p>
-                <p className="text-gray-700 mb-4">
+                <p className="text-readable mb-4">
                   With a higher capacity than previous models, the Powerwall 3 can power your home during outages and help
                   you save money by reducing reliance on grid electricity during peak hours.
                 </p>
-                <p className="text-gray-700 mb-4">
+                <p className="text-readable mb-4">
                   The system is designed to integrate seamlessly with your home's electrical system and can be controlled
                   and monitored through the Tesla app.
                 </p>
               </div>
   
-              <div className="bg-gray-100 p-6 rounded-lg">
+              <div className="bg-muted p-6 rounded-lg">
                 <h3 className="font-semibold text-xl mb-4">Key Features</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
+                    <span className="bg-primary rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
                       ✓
                     </span>
                     <span>Increased energy capacity of 13.5 kWh</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
+                    <span className="bg-primary rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
                       ✓
                     </span>
                     <span>Higher continuous power output</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
+                    <span className="bg-primary rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
                       ✓
                     </span>
                     <span>Improved efficiency and thermal management</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
+                    <span className="bg-primary rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
                       ✓
                     </span>
                     <span>Seamless integration with Tesla solar products</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-red-600 rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
+                    <span className="bg-primary rounded-full w-5 h-5 flex items-center justify-center text-white mr-2 mt-1">
                       ✓
                     </span>
                     <span>Advanced monitoring through the Tesla app</span>
@@ -145,10 +145,10 @@ export default function TeslaPowerwallPage() {
             ref={faqsSectionRef}
             className={`transition-opacity duration-500 ${activeSection === "faqs" ? "opacity-100" : activeSection === null ? "opacity-100" : "opacity-50"}`}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">FAQs about Tesla Powerwall 3</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">FAQs about Tesla Powerwall 3</h2>
   
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
+              <div className="space-content">
                 <div className="bg-gray-900 text-white p-6 rounded-lg">
                   <h3 className="font-semibold text-xl mb-2">How much does a Powerwall 3 cost?</h3>
                   <p className="text-gray-300">
@@ -166,7 +166,7 @@ export default function TeslaPowerwallPage() {
                 </div>
               </div>
   
-              <div className="space-y-6">
+              <div className="space-content">
                 <div className="bg-gray-900 text-white p-6 rounded-lg">
                   <h3 className="font-semibold text-xl mb-2">Can I install Powerwall without solar panels?</h3>
                   <p className="text-gray-300">

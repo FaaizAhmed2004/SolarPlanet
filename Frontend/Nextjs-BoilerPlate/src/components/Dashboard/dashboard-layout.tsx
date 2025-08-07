@@ -29,7 +29,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 SP
               </div>
-              <span>Solar Planet</span>
+              <span>Energy Planet</span>
             </div>
           </SidebarHeader>
           <SidebarContent>
@@ -37,7 +37,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           </SidebarContent>
           <SidebarFooter className="border-t border-border p-4">
             <div className="flex items-center justify-between">
-              <p className="text-sm text-muted-foreground">© 2025 Solar Planet</p>
+              <p className="text-sm text-readable">© 2025 Energy Planet</p>
               <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
                 {theme === "dark" ? <SunIcon className="h-4 w-4" /> : <MoonIcon className="h-4 w-4" />}
                 <span className="sr-only">Toggle theme</span>

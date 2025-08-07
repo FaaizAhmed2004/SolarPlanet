@@ -15,15 +15,15 @@ export default function WINAICOsolar() {
     {
       id: 1,
       title: "A guide to\nWINAICO Solar Panels",
-      bgColor: "bg-white",
-      textColor: "text-red-600",
+      bgColor: "bg-background",
+      textColor: "text-primary",
       content:
         "WINAICO solar panels are high-efficiency modules designed for residential and commercial installations. They feature advanced cell technology and robust construction for durability in various weather conditions. Our panels undergo rigorous testing to ensure they can withstand extreme weather conditions including hail, wind, and snow loads.\n\nWINAICO panels are manufactured using premium materials and strict quality control processes. Each panel is individually tested and certified to meet international standards. The monocrystalline silicon cells used in our panels deliver superior efficiency and performance even in low-light conditions.",
     },
     {
       id: 2,
       title: "WINAICO\nsolar panels",
-      bgColor: "bg-amber-400",
+      bgColor: "bg-accent",
       textColor: "text-white",
       content:
         "WINAICO offers a range of solar panel models including the WST series and WSP series. These panels deliver excellent performance even in low-light conditions and have one of the industry's lowest degradation rates. The WST series features half-cut cell technology that reduces internal resistance and increases power output.\n\nOur panels are designed with a robust frame and high-quality materials to withstand harsh environmental conditions. The anti-reflective glass coating maximizes light absorption while the advanced cell technology ensures optimal energy conversion efficiency. WINAICO panels are ideal for both residential and commercial installations.",
@@ -47,7 +47,7 @@ export default function WINAICOsolar() {
   ]
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-background text-black">
       <Navbar/>
       {/* Hero Section */}
       <div className="relative h-[600px] w-full">
@@ -90,7 +90,7 @@ export default function WINAICOsolar() {
               >
                 <h3 className={`${card.textColor} text-center font-medium whitespace-pre-line`}>{card.title}</h3>
 
-                {card.id === 1 && <ChevronDown className="text-red-600 mt-2 h-5 w-5" />}
+                {card.id === 1 && <ChevronDown className="text-primary mt-2 h-5 w-5" />}
               </motion.div>
             ))}
           </div>
@@ -98,8 +98,8 @@ export default function WINAICOsolar() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-center text-red-600 uppercase tracking-wider font-medium mb-8">
+      <div className="max-w-4xl mx-auto section-padding px-4">
+        <h2 className="text-center text-primary uppercase tracking-wider font-medium mb-8">
           A Guide to WINAICO Solar Panels
         </h2>
 
@@ -114,7 +114,7 @@ export default function WINAICOsolar() {
               className="mb-12"
             >
               <motion.p
-                className="text-lg leading-relaxed"
+                className="text-lg text-pretty leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,

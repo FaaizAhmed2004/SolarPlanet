@@ -1,3 +1,7 @@
+// DEPRECATED: Quote model is no longer used as quotes are now handled via email
+// This file is preserved for reference but should not be imported or used
+
+/*
 import mongoose, { Schema, Document } from 'mongoose';
 
 interface IQuote extends Document {
@@ -78,3 +82,7 @@ const QuoteSchema = new Schema<IQuote>(
 );
 
 export default mongoose.model<IQuote>('Quote', QuoteSchema);
+*/
+
+// Export a placeholder to prevent import errors
+export default null;

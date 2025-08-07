@@ -48,20 +48,20 @@ export default function ElectrifyHome() {
       <div className="grid grid-cols-1 md:grid-cols-5">
         {/* White Section */}
         <div
-          className="bg-white p-6 flex flex-col items-center justify-center text-center cursor-pointer transition-all hover:shadow-lg"
+          className="bg-background p-6 content-center cursor-pointer transition-all hover:shadow-lg"
           onClick={() => handleCardClick("home")}
         >
-          <h2 className="text-red-600 font-bold mb-4">
+          <h2 className="text-primary font-bold mb-4">
             Electrify My Home | <br />
             Efficient <br />
             Electric Home Melbourne
           </h2>
-          <ArrowDown className="text-red-600 mt-2" size={24} />
+          <ArrowDown className="text-primary mt-2" size={24} />
         </div>
 
         {/* Yellow Section */}
         <div
-          className={`bg-amber-400 p-6 flex items-center justify-center text-center cursor-pointer transition-all hover:shadow-lg ${activeSection === "why" ? "ring-4 ring-amber-600" : ""}`}
+          className={`bg-accent p-6 flex items-center justify-center text-center cursor-pointer transition-all hover:shadow-lg ${activeSection === "why" ? "ring-4 ring-amber-600" : ""}`}
           onClick={() => handleCardClick("why")}
         >
           <h2 className="font-medium">Why electrify your home?</h2>
@@ -77,7 +77,7 @@ export default function ElectrifyHome() {
 
         {/* Red Section */}
         <div
-          className={`bg-red-600 p-6 flex items-center justify-center text-center text-white cursor-pointer transition-all hover:shadow-lg ${activeSection === "worth" ? "ring-4 ring-red-800" : ""}`}
+          className={`bg-primary p-6 flex items-center justify-center text-center text-white cursor-pointer transition-all hover:shadow-lg ${activeSection === "worth" ? "ring-4 ring-red-800" : ""}`}
           onClick={() => handleCardClick("worth")}
         >
           <h2 className="font-medium">
@@ -102,7 +102,7 @@ export default function ElectrifyHome() {
       <div ref={contentRef} className="flex-grow p-8 max-w-5xl mx-auto">
         {activeSection === "home" && (
           <div className="animate-fadeIn">
-            <h2 className="text-2xl font-bold text-red-600 mb-4">Welcome to Electrify My Home</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">Welcome to Electrify My Home</h2>
             <p className="mb-4">
               We help Melbourne homeowners transition to efficient, all-electric homes. Our expert team provides
               guidance on replacing gas appliances with modern electric alternatives, reducing your carbon footprint and
@@ -132,7 +132,7 @@ export default function ElectrifyHome() {
         {activeSection === "how" && (
           <div className="animate-fadeIn">
             <h2 className="text-2xl font-bold text-orange-600 mb-4">How to Switch to Electric</h2>
-            <ol className="list-decimal pl-5 space-y-4">
+            <ol className="list-decimal pl-5 space-content">
               <li>
                 <strong>Assessment:</strong> We'll evaluate your current gas appliances and recommend electric
                 alternatives.
@@ -160,12 +160,12 @@ export default function ElectrifyHome() {
 
         {activeSection === "worth" && (
           <div className="animate-fadeIn">
-            <h2 className="text-2xl font-bold text-red-600 mb-4">Is It Worth It? How Much Can You Save?</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">Is It Worth It? How Much Can You Save?</h2>
             <p className="mb-4">
               The financial benefits of electrification depend on your specific situation, but many Melbourne homeowners
               see significant savings:
             </p>
-            <div className="bg-gray-100 p-4 rounded-lg mb-4">
+            <div className="bg-muted p-4 rounded-lg mb-4">
               <h3 className="font-bold mb-2">Potential Savings:</h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Eliminate gas supply charges (typically $250-350 per year)</li>
@@ -185,7 +185,7 @@ export default function ElectrifyHome() {
         {activeSection === "faq" && (
           <div className="animate-fadeIn">
             <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4">
+            <div className="space-content">
               <div>
                 <h3 className="font-bold">Do I need to electrify everything at once?</h3>
                 <p>No, you can take a staged approach based on your budget and when appliances need replacement.</p>
@@ -220,7 +220,7 @@ export default function ElectrifyHome() {
         )}
 
         {!activeSection && (
-          <div className="text-center text-gray-500 py-10">
+          <div className="text-center text-subtle py-10">
             <p>Click on any section above to learn more</p>
           </div>
         )}
@@ -228,7 +228,7 @@ export default function ElectrifyHome() {
         <QuoteRequestForm/>
       {/* Footer */}
       <div className="p-6 text-center border-t">
-        <h3 className="text-red-600 font-medium tracking-wider">
+        <h3 className="text-primary font-medium tracking-wider">
           ELECTRIFY MY HOME | EFFICIENT ELECTRIC HOME MELBOURNE
         </h3>
       </div>

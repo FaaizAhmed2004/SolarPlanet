@@ -94,7 +94,7 @@ export default function ResetPasswordPage() {
             </Alert>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-content">
             <div className="space-y-2">
               <Label htmlFor="password">New Password</Label>
               <Input id="password" name="password" type="password" required />
@@ -118,8 +118,8 @@ export default function ResetPasswordPage() {
           </form>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <p className="text-sm text-muted-foreground">
-            <Link href="/login" className="text-primary underline underline-offset-4 hover:text-primary/90">
+          <p className="text-sm text-readable">
+            <Link href="/login" className="text-primary underline underline-offset-4 hover:text-accent-foreground/90">
               Back to Login
             </Link>
           </p>

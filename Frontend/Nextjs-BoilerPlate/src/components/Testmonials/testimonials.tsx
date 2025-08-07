@@ -15,19 +15,19 @@ const testimonials = [
   {
     id: 2,
     quote:
-      "We had our solar installed by Total Solar Solutions and couldn't be happier. The team was professional, knowledgeable and the installation was completed quickly with no issues. Highly recommend!",
+      "We had our solar installed by The Energy Planet and couldn't be happier. The team was professional, knowledgeable and the installation was completed quickly with no issues. Highly recommend!",
     author: "James",
   },
   {
     id: 3,
     quote:
-      "From the initial consultation to the final installation, Total Solar Solutions provided exceptional service. The system has been performing brilliantly and our electricity bills have dropped significantly.",
+      "From the initial consultation to the final installation, The Energy Planet provided exceptional service. The system has been performing brilliantly and our electricity bills have dropped significantly.",
     author: "Sarah",
   },
   {
     id: 4,
     quote:
-      "The team at Total Solar Solutions made the whole process easy. They explained everything clearly, helped with all the paperwork, and the installation team was efficient and tidy. Great experience overall!",
+      "The team at The Energy Planet made the whole process easy. They explained everything clearly, helped with all the paperwork, and the installation team was efficient and tidy. Great experience overall!",
     author: "Michael",
   },
 ]
@@ -65,8 +65,8 @@ export default function TestimonialCarousel() {
   }
 
   return (
-    <div
-      className="relative w-full h-[500px] md:h-[600px] overflow-hidden"
+    <section
+      className="relative w-full min-h-[500px] md:min-h-[600px] section-padding overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -81,14 +81,14 @@ export default function TestimonialCarousel() {
 
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60">
+      <div className="hero-overlay">
         {/* Content Container */}
-        <div className="container mx-auto h-full flex flex-col items-center justify-center px-4 py-12 text-center">
+        <div className="container mx-auto h-full flex flex-col items-center justify-center px-4 section-padding text-center">
           <h2 className="text-white text-3xl md:text-4xl font-bold mb-8 tracking-wider">TESTIMONIALS</h2>
 
           {/* Testimonial */}
           <div className="max-w-4xl mx-auto">
-            <p className="text-white text-lg md:text-xl leading-relaxed mb-8 italic">
+            <p className="text-white text-lg md:text-xl text-pretty leading-relaxed mb-8 italic">
               "{testimonials[currentIndex].quote}"
             </p>
             <p className="text-white text-lg md:text-xl font-medium">{testimonials[currentIndex].author}</p>
@@ -101,7 +101,7 @@ export default function TestimonialCarousel() {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                  index === currentIndex ? "bg-amber-500" : "bg-white"
+                  index === currentIndex ? "bg-primary" : "bg-background"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -128,7 +128,7 @@ export default function TestimonialCarousel() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

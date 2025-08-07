@@ -65,15 +65,15 @@ const LeadsTable = () => {
     <div className="container mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Leads Table</h1>
 
-      {error && <div className="p-4 text-center text-red-500">{error}</div>}
+      {error && <div className="p-4 text-center text-primary">{error}</div>}
 
       {loading ? (
         <div className="p-4 text-center">Loading leads...</div>
       ) : (
         <>
-          <table className="w-full border-collapse border border-gray-200 shadow-md">
+          <table className="w-full border-collapse border border-border shadow-md">
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="bg-muted">
                 <th className="border p-3 text-left">ID</th>
                 <th className="border p-3 text-left">Full Name</th>
                 <th className="border p-3 text-left">Email</th>
@@ -100,7 +100,7 @@ const LeadsTable = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={8} className="p-4 text-center text-gray-500">
+                  <td colSpan={8} className="p-4 text-center text-subtle">
                     No leads found.
                   </td>
                 </tr>
@@ -110,7 +110,7 @@ const LeadsTable = () => {
 
           {/* Pagination */}
           <div className="flex justify-between items-center mt-4">
-            <span className="text-gray-700">
+            <span className="text-readable">
               Page {page} of {totalPages} | Total Leads: {totalResults}
             </span>
 

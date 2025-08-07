@@ -53,18 +53,73 @@ export default function QuoteRequestForm() {
     setSubmitStatus({})
 
     try {
-      const formattedData = { ...formData } // ✅ Keep interests in original format
+      // Client-side validation
+      if (!formData.fullName.trim()) {
+        setSubmitStatus({ success: false, message: "Please enter your full name." })
+        setIsSubmitting(false)
+        return
+      }
 
-      const response = await fetch("http://localhost:3000/v1/Quote", {
+      if (!formData.email.trim() || !formData.email.includes('@')) {
+        setSubmitStatus({ success: false, message: "Please enter a valid email address." })
+        setIsSubmitting(false)
+        return
+      }
+
+      if (!formData.phone.trim()) {
+        setSubmitStatus({ success: false, message: "Please enter your phone number." })
+        setIsSubmitting(false)
+        return
+      }
+
+      if (!formData.address.trim()) {
+        setSubmitStatus({ success: false, message: "Please enter your address." })
+        setIsSubmitting(false)
+        return
+      }
+
+      if (!formData.suburb.trim()) {
+        setSubmitStatus({ success: false, message: "Please enter your suburb." })
+        setIsSubmitting(false)
+        return
+      }
+
+      if (formData.interests.length === 0) {
+        setSubmitStatus({ success: false, message: "Please select at least one area of interest." })
+        setIsSubmitting(false)
+        return
+      }
+
+      if (!formData.dailyEnergyConsumption.trim()) {
+        setSubmitStatus({ success: false, message: "Please provide your daily energy consumption information." })
+        setIsSubmitting(false)
+        return
+      }
+
+      const formattedData = { ...formData }
+
+      // Create an AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
+      const response = await fetch("/api/quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formattedData),
+        signal: controller.signal,
       })
 
-      if (response.ok) {
-        setSubmitStatus({ success: true, message: "Thank you! We'll be in touch soon." })
+      clearTimeout(timeoutId);
+
+      const responseData = await response.json()
+
+      if (response.ok && responseData.success) {
+        setSubmitStatus({ 
+          success: true, 
+          message: responseData.message || "Thank you! Your quote request has been submitted successfully. We'll be in touch soon." 
+        })
         setFormData({
           fullName: "",
           email: "",
@@ -75,41 +130,99 @@ export default function QuoteRequestForm() {
           dailyEnergyConsumption: "",
         })
       } else {
-        const errorData = await response.json().catch(() => null)
-        setSubmitStatus({
-          success: false,
-          message: errorData?.message || "Invalid data. Please check your selections.",
-        })
+        // Handle different types of errors
+        if (response.status === 400 && responseData.errors) {
+          // Validation errors from backend
+          setSubmitStatus({
+            success: false,
+            message: `Please check the following: ${responseData.errors.join(', ')}`,
+          })
+        } else if (responseData.retryable) {
+          // Temporary errors that can be retried
+          setSubmitStatus({
+            success: false,
+            message: responseData.message || "There was a temporary issue submitting your request. Please try again.",
+          })
+        } else {
+          // General errors
+          setSubmitStatus({
+            success: false,
+            message: responseData.message || "There was an issue submitting your request. Please check your information and try again.",
+          })
+        }
       }
     } catch (error) {
-      setSubmitStatus({ success: false, message: "Network error. Please try again." })
+      console.error('Quote submission error:', error)
+      
+      // Provide more specific error messages based on error type
+      let errorMessage = "An unexpected error occurred. Please try again.";
+      
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        errorMessage = "Request timed out. Please check your connection and try again.";
+      } else if (error instanceof TypeError && error.message.includes('fetch')) {
+        errorMessage = "Network error. Please check your internet connection and try again.";
+      } else if (error instanceof Error) {
+        // Check if it's a timeout or server error
+        if (error.message.includes('timeout')) {
+          errorMessage = "Request timed out. Please try again.";
+        } else if (error.message.includes('server')) {
+          errorMessage = "Server error. Please try again in a few minutes.";
+        } else if (error.message.includes('Failed to fetch')) {
+          errorMessage = "Unable to connect to server. Please check your internet connection.";
+        }
+      }
+      
+      setSubmitStatus({ 
+        success: false, 
+        message: errorMessage
+      })
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-lg border border-gray-100">
-      <div className="text-center mb-8">
-        <p className="text-red-600 font-medium uppercase text-sm tracking-wider">Get a Free Quote</p>
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-2">Request Your Free Quote Today</h2>
-      </div>
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:section-padding">
+      <div className="max-w-4xl mx-auto bg-card p-6 sm:p-8 lg:p-10 rounded-xl shadow-2xl border border-border">
+        <div className="text-center mb-8 sm:mb-10">
+          <p className="text-solar-orange font-semibold uppercase text-sm sm:text-base tracking-wider">Get a Free Quote</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-card-foreground mt-3 sm:mt-4 leading-tight text-balance">
+            Harness <span className="text-accent">Solar Power</span> for Your 
+            <span className="text-secondary"> Australian Home</span>
+          </h2>
+          <p className="text-readable mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
+            Join thousands of Australians saving on energy bills with premium solar solutions
+          </p>
+        </div>
 
       {submitStatus.message && (
         <div
-          className={`mb-6 p-4 rounded-md text-center ${
-            submitStatus.success ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+          className={`mb-6 p-4 rounded-md text-center border ${
+            submitStatus.success 
+              ? "bg-green-50 text-green-800 border-green-200" 
+              : "bg-red-50 text-red-800 border-red-200"
           }`}
         >
-          {submitStatus.message}
+          <div className="flex items-center justify-center">
+            {submitStatus.success ? (
+              <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5 mr-2 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+            )}
+            {submitStatus.message}
+          </div>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Name & Email */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <form onSubmit={handleSubmit} className="space-content sm:space-section">
+          {/* Name & Email */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           <div className="space-y-1">
-            <label htmlFor="fullName" className="text-sm font-medium text-gray-700">
+            <label htmlFor="fullName" className="text-sm font-medium text-readable">
               Full Name
             </label>
             <input
@@ -120,11 +233,11 @@ export default function QuoteRequestForm() {
               required
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 hover:border-primary/50"
             />
           </div>
           <div className="space-y-1">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="text-sm font-medium text-readable">
               Email
             </label>
             <input
@@ -135,15 +248,15 @@ export default function QuoteRequestForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 hover:border-primary/50"
             />
           </div>
         </div>
 
-        {/* Phone & Address */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {/* Phone & Address */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           <div className="space-y-1">
-            <label htmlFor="phone" className="text-sm font-medium text-gray-700">
+            <label htmlFor="phone" className="text-sm font-medium text-readable">
               Phone
             </label>
             <input
@@ -154,11 +267,11 @@ export default function QuoteRequestForm() {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 hover:border-primary/50"
             />
           </div>
           <div className="space-y-1">
-            <label htmlFor="address" className="text-sm font-medium text-gray-700">
+            <label htmlFor="address" className="text-sm font-medium text-readable">
               Address
             </label>
             <input
@@ -169,14 +282,14 @@ export default function QuoteRequestForm() {
               required
               value={formData.address}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+              className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 hover:border-primary/50"
             />
           </div>
         </div>
 
         {/* Suburb */}
         <div className="space-y-1">
-          <label htmlFor="suburb" className="text-sm font-medium text-gray-700">
+          <label htmlFor="suburb" className="text-sm font-medium text-readable">
             Suburb
           </label>
           <input
@@ -187,27 +300,27 @@ export default function QuoteRequestForm() {
             required
             value={formData.suburb}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 hover:border-primary/50"
           />
         </div>
 
-        {/* Interests */}
-        <div className="space-y-3">
-          <p className="text-sm font-medium text-gray-700">I am interested in:</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          {/* Interests */}
+          <div className="space-content">
+            <p className="text-sm sm:text-base font-medium text-readable">I am interested in:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {interestOptions.map((option) => (
               <label
                 key={option}
-                className="flex items-center space-x-3 p-3 rounded-md border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer"
+                className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-accent hover:border-primary transition-all duration-200 cursor-pointer"
               >
                 <input
                   type="checkbox"
                   name={option}
                   checked={formData.interests.includes(option)}
                   onChange={handleCheckboxChange}
-                  className="h-5 w-5 text-red-500 rounded border-gray-300 focus:ring-red-500"
+                  className="h-5 w-5 text-primary rounded border-border bg-background focus:ring-primary focus:ring-2"
                 />
-                <span className="text-gray-700">{option}</span>
+                <span className="text-readable">{option}</span>
               </label>
             ))}
           </div>
@@ -215,7 +328,7 @@ export default function QuoteRequestForm() {
 
         {/* Energy Consumption */}
         <div className="space-y-1">
-          <label htmlFor="dailyEnergyConsumption" className="text-sm font-medium text-gray-700">
+          <label htmlFor="dailyEnergyConsumption" className="text-sm font-medium text-readable">
             Daily Energy Consumption
           </label>
           <textarea
@@ -226,17 +339,17 @@ export default function QuoteRequestForm() {
             required
             value={formData.dailyEnergyConsumption}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 resize-none hover:border-primary/50"
           />
         </div>
 
-        {/* Submit Button */}
-        <div className="pt-2">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full md:w-auto px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
-          >
+          {/* Submit Button */}
+          <div className="pt-4 sm:pt-6 text-center">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full sm:w-auto min-w-[200px] px-8 sm:px-12 py-4 sm:py-5 bg-solar-gradient hover:opacity-90 text-white font-semibold rounded-full transition-all duration-200 shadow-lg transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none text-base sm:text-lg"
+            >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
                 <svg
@@ -258,8 +371,9 @@ export default function QuoteRequestForm() {
               "Get Free Quote"
             )}
           </button>
-        </div>
-      </form>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

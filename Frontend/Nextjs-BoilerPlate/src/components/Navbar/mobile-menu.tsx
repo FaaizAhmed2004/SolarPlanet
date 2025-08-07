@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ChevronDown, X } from "lucide-react"
+import { ChevronDown, X, Phone } from "lucide-react"
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -16,84 +16,185 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 bg-gray-800 bg-opacity-50 md:hidden">
-      <div className="h-full w-64 bg-white p-4 text-gray-800">
-        <div className="flex justify-between">
-          <h2 className="text-xl font-bold">Menu</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
-            <X size={24} />
-          </button>
-        </div>
-
-        <div className="mt-6 flex flex-col">
-          <Link href="/" className="py-2 hover:text-red-600" onClick={onClose}>
-            Home
-          </Link>
-
-          <Link href="/residential-solar" className="py-2 hover:text-red-600" onClick={onClose}>
-            Residential Solar
-          </Link>
-
-          <div>
-            <button
-              onClick={() => setBatteryDropdownOpen(!batteryDropdownOpen)}
-              className="flex w-full items-center justify-between py-2 hover:text-red-600"
+    <div className="fixed inset-0 z-modal lg:hidden layout-safe">
+      {/* Backdrop */}
+      <div className="hero-overlay backdrop-blur-sm cursor-pointer" onClick={onClose} />
+      
+      {/* Menu Panel */}
+      <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-card shadow-2xl layout-safe">
+        <div className="flex h-full flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-border p-4 sm:p-6">
+            <h2 className="text-xl font-bold text-primary">Energy Planet</h2>
+            <button 
+              type="button"
+              onClick={onClose} 
+              className="rounded-lg p-2 text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer"
+              aria-label="Close menu"
             >
-              <span>Battery Storage</span>
-              <ChevronDown size={16} className={`transition-transform ${batteryDropdownOpen ? "rotate-180" : ""}`} />
+              <X size={24} />
             </button>
-
-            {batteryDropdownOpen && (
-              <div className="ml-4 flex flex-col">
-                <Link href="/battery-storage/option1" className="py-2 hover:text-red-600" onClick={onClose}>
-                  Option 1
-                </Link>
-                <Link href="/battery-storage/option2" className="py-2 hover:text-red-600" onClick={onClose}>
-                  Option 2
-                </Link>
-              </div>
-            )}
           </div>
 
-          <Link href="/commercial-solar" className="py-2 hover:text-red-600" onClick={onClose}>
-            Commercial Solar
-          </Link>
+          {/* Menu Items */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+            <nav className="space-y-2">
+              <Link 
+                href="/" 
+                className="block rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                onClick={onClose}
+              >
+                Home
+              </Link>
 
-          <Link href="/winaico-solar" className="py-2 hover:text-red-600" onClick={onClose}>
-            WINAICO Solar
-          </Link>
+              <Link 
+                href="/ResidentialSolar" 
+                className="block rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                onClick={onClose}
+              >
+                Residential Solar
+              </Link>
 
-          <Link href="/heat-pumps" className="py-2 hover:text-red-600" onClick={onClose}>
-            Heat Pumps
-          </Link>
+              {/* Battery Storage Dropdown */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setBatteryDropdownOpen(!batteryDropdownOpen)}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer"
+                >
+                  <span>Battery Storage</span>
+                  <ChevronDown 
+                    size={14} 
+                    className={`transition-transform duration-200 ${batteryDropdownOpen ? "rotate-180" : ""}`} 
+                  />
+                </button>
 
-          <div>
-            <button
-              onClick={() => setInfoDropdownOpen(!infoDropdownOpen)}
-              className="flex w-full items-center justify-between py-2 hover:text-red-600"
-            >
-              <span>Info</span>
-              <ChevronDown size={16} className={`transition-transform ${infoDropdownOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {infoDropdownOpen && (
-              <div className="ml-4 flex flex-col">
-                <Link href="/info/about" className="py-2 hover:text-red-600" onClick={onClose}>
-                  About Us
-                </Link>
-                <Link href="/info/contact" className="py-2 hover:text-red-600" onClick={onClose}>
-                  Contact
-                </Link>
-                <Link href="/info/faq" className="py-2 hover:text-red-600" onClick={onClose}>
-                  FAQ
-                </Link>
+                {batteryDropdownOpen && (
+                  <div className="ml-4 mt-2 space-y-1">
+                    <Link 
+                      href="/BatteryStorage" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      Benefits of Battery Storage
+                    </Link>
+                    <Link 
+                      href="/teslapowerwall" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      Tesla Powerwall 3
+                    </Link>
+                  </div>
+                )}
               </div>
-            )}
+
+              <Link 
+                href="/commercialsolar" 
+                className="block rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                onClick={onClose}
+              >
+                Commercial Solar
+              </Link>
+
+              <Link 
+                href="/WINAICOsolar" 
+                className="block rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                onClick={onClose}
+              >
+                WINAICO Solar
+              </Link>
+
+              <Link 
+                href="/Heatpump" 
+                className="block rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                onClick={onClose}
+              >
+                Heat Pumps
+              </Link>
+
+              {/* More Info Dropdown */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setInfoDropdownOpen(!infoDropdownOpen)}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-medium text-card-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer"
+                >
+                  <span>More</span>
+                  <ChevronDown 
+                    size={14} 
+                    className={`transition-transform duration-200 ${infoDropdownOpen ? "rotate-180" : ""}`} 
+                  />
+                </button>
+
+                {infoDropdownOpen && (
+                  <div className="ml-4 mt-2 space-y-1">
+                    <Link 
+                      href="/about" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      About Us
+                    </Link>
+                    <Link 
+                      href="/Contact" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      Contact
+                    </Link>
+                    <Link 
+                      href="/Faq" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      FAQ
+                    </Link>
+                    <Link 
+                      href="/electrify_home" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      Electrify Home
+                    </Link>
+                    <Link 
+                      href="/ev-charger" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      EV Charger
+                    </Link>
+                    <Link 
+                      href="/case-study" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      Case Studies
+                    </Link>
+                    <Link 
+                      href="/Login" 
+                      className="block rounded-lg px-3 py-2 text-sm text-readable hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer" 
+                      onClick={onClose}
+                    >
+                      Login
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </nav>
           </div>
 
-          <a href="tel:0397290894" className="mt-4 py-2 font-medium text-red-600" onClick={onClose}>
-            03 9729 0894
-          </a>
+          {/* Footer with Phone */}
+          <div className="border-t border-border p-4 sm:p-6">
+            <a 
+              href="tel:+61433866320" 
+              className="flex items-center justify-center gap-3 rounded-lg bg-primary text-primary-foreground px-4 py-3 font-semibold shadow-lg transition-all duration-200 hover:opacity-90 cursor-pointer"
+              onClick={onClose}
+            >
+              <Phone size={20} />
+              <span>+61 433 866 320</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

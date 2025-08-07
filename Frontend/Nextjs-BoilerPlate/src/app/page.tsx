@@ -6,15 +6,29 @@ import QuoteRequestForm from "@/components/Qoute/Qoute"
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-background">
+      {/* Navigation - Fixed positioning */}
       <Navbar />
-      <div className="container mx-auto mt-10 p-4">
-   
-      </div>
-      <MainHero/>
-      <QuoteRequestForm/>
-      <TestimonialCarousel/>
-      <Footer/>
+      
+      {/* Hero Section - Full viewport with proper spacing */}
+      <section className="relative section-clear">
+        <MainHero />
+      </section>
+      
+      {/* Quote Request Section - Clear separation */}
+      <section className="section-clear section-separator">
+        <QuoteRequestForm />
+      </section>
+      
+      {/* Testimonials Section - Proper spacing */}
+      <section className="section-clear section-separator">
+        <TestimonialCarousel />
+      </section>
+      
+      {/* Footer Section - Final section */}
+      <footer className="relative z-10 mt-8">
+        <Footer />
+      </footer>
     </main>
   )
 }

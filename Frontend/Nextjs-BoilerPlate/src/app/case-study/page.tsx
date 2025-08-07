@@ -101,7 +101,7 @@ export default function CaseStudiesPage() {
   return (
     <>
     <Navbar/>
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-muted/50">
       {/* Hero Banner */}
       <div className="relative h-[400px] md:h-[500px]">
         <Image
@@ -117,9 +117,9 @@ export default function CaseStudiesPage() {
       </div>
 
       {/* Case Study Cards */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Our Success Stories</h2>
-        <p className="text-lg text-gray-600 mb-12 max-w-3xl">
+      <div className="page-container section-padding">
+        <h2 className="text-3xl font-bold text-foreground mb-8">Our Success Stories</h2>
+        <p className="text-lg text-readable mb-12 max-w-3xl">
           Explore how we've helped families and individuals achieve their financial goals and secure their futures. Each
           case study represents real challenges and the solutions we implemented.
         </p>
@@ -129,16 +129,16 @@ export default function CaseStudiesPage() {
             <div
               key={study.id}
               onClick={() => handleCardClick(study)}
-              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105 hover:shadow-lg"
+              className="bg-background rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105 hover:shadow-lg"
             >
               <div className="p-6">
                 <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
                   {study.category}
                 </span>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{study.title}</h3>
-                <p className="text-gray-600">{study.summary}</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">{study.title}</h3>
+                <p className="text-readable">{study.summary}</p>
               </div>
-              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <div className="px-6 py-4 bg-muted/50 border-t border-border">
                 <p className="text-blue-600 font-medium flex items-center">
                   Read case study
                   <svg
@@ -162,35 +162,35 @@ export default function CaseStudiesPage() {
 
       {/* Case Study Detail Section */}
       {selectedCaseStudy && (
-        <div id="case-study-detail" className="bg-white py-16 border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-4">
+        <div id="case-study-detail" className="bg-background section-padding border-t border-border">
+          <div className="page-container">
             <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
               {selectedCaseStudy.category}
             </span>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">{selectedCaseStudy.title}</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">{selectedCaseStudy.title}</h2>
 
-            <div className="space-y-8">
+            <div className="space-section">
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">The Challenge</h3>
-                <p className="text-gray-600">{selectedCaseStudy.challenge}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">The Challenge</h3>
+                <p className="text-readable">{selectedCaseStudy.challenge}</p>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Our Solution</h3>
-                <p className="text-gray-600">{selectedCaseStudy.solution}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Our Solution</h3>
+                <p className="text-readable">{selectedCaseStudy.solution}</p>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">The Results</h3>
-                <p className="text-gray-600">{selectedCaseStudy.results}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">The Results</h3>
+                <p className="text-readable">{selectedCaseStudy.results}</p>
               </div>
 
               {selectedCaseStudy.testimonial && (
-                <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500 mt-8">
-                  <p className="text-gray-600 italic mb-4">"{selectedCaseStudy.testimonial.quote}"</p>
+                <div className="bg-muted/50 p-6 rounded-lg border-l-4 border-blue-500 mt-8">
+                  <p className="text-readable italic mb-4">"{selectedCaseStudy.testimonial.quote}"</p>
                   <div>
-                    <p className="font-semibold text-gray-800">{selectedCaseStudy.testimonial.author}</p>
-                    <p className="text-gray-500 text-sm">{selectedCaseStudy.testimonial.position}</p>
+                    <p className="font-semibold text-foreground">{selectedCaseStudy.testimonial.author}</p>
+                    <p className="text-subtle text-sm">{selectedCaseStudy.testimonial.position}</p>
                   </div>
                 </div>
               )}

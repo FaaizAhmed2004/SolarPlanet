@@ -108,7 +108,7 @@ export default function SignupPage() {
             </Alert>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-content">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
               <Input id="name" name="name" placeholder="John Doe" required />
@@ -152,9 +152,9 @@ export default function SignupPage() {
           </form>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-readable">
             Already have an account?{" "}
-            <Link href="/Login" className="text-primary underline underline-offset-4 hover:text-primary/90">
+            <Link href="/Login" className="text-primary underline underline-offset-4 hover:text-accent-foreground/90">
               Login
             </Link>
           </p>

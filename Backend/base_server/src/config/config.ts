@@ -13,6 +13,9 @@ export default {
 
     //Email
     EMAIL_API_KEY: process.env.EMAIL_SERVICE_API_KEY,
+    BUSINESS_EMAIL: process.env.BUSINESS_EMAIL,
+    FROM_EMAIL: process.env.FROM_EMAIL,
+    REPLY_TO_EMAIL: process.env.REPLY_TO_EMAIL,
 
     //Tokens
     TOKENS: {

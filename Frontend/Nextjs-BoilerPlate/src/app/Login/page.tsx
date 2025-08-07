@@ -90,7 +90,7 @@ export default function AdminLoginPage() {
             </Alert>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-content">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input id="email" name="email" type="email" placeholder="admin@example.com" required />
@@ -107,9 +107,9 @@ export default function AdminLoginPage() {
           </form>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-readable">
             Forgot your password?{" "}
-            <Link href="/signup" className="text-primary underline underline-offset-4 hover:text-primary/90">
+            <Link href="/signup" className="text-primary underline underline-offset-4 hover:text-accent-foreground/90">
               signup
             </Link>
           </p>

@@ -1,0 +1,251 @@
+/* Responsive Design Utilities for The Energy Planet */
+
+/* Container Utilities */
+.container-responsive {
+  @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-sm {
+  @apply max-w-sm mx-auto;
+}
+
+.container-md {
+  @apply max-w-md mx-auto;
+}
+
+.container-lg {
+  @apply max-w-lg mx-auto;
+}
+
+.container-xl {
+  @apply max-w-xl mx-auto;
+}
+
+.container-2xl {
+  @apply max-w-2xl mx-auto;
+}
+
+.container-4xl {
+  @apply max-w-4xl mx-auto;
+}
+
+.container-6xl {
+  @apply max-w-6xl mx-auto;
+}
+
+.container-7xl {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Spacing Utilities */
+.spacing-sm {
+  @apply px-4 py-4 sm:px-6 sm:py-6;
+}
+
+.spacing-md {
+  @apply px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10;
+}
+
+.spacing-lg {
+  @apply px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16;
+}
+
+.spacing-xl {
+  @apply px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+}
+
+/* Section Spacing */
+.section-sm {
+  @apply py-8 sm:py-12;
+}
+
+.section-md {
+  @apply py-12 sm:py-16 lg:py-20;
+}
+
+.section-lg {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.section-xl {
+  @apply py-20 sm:py-24 lg:py-32;
+}
+
+/* Typography Responsive */
+.text-responsive-xs {
+  @apply text-xs sm:text-sm;
+}
+
+.text-responsive-sm {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-base {
+  @apply text-base sm:text-lg;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.text-responsive-2xl {
+  @apply text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.text-responsive-3xl {
+  @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+/* Grid Responsive */
+.grid-responsive-1-2 {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6;
+}
+
+.grid-responsive-1-2-3 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+}
+
+.grid-responsive-1-2-4 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6;
+}
+
+.grid-responsive-2-4 {
+  @apply grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4;
+}
+
+/* Button Responsive */
+.btn-responsive {
+  @apply px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base;
+}
+
+.btn-responsive-lg {
+  @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+}
+
+/* Card Responsive */
+.card-responsive {
+  @apply p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl;
+}
+
+.card-responsive-sm {
+  @apply p-3 sm:p-4 lg:p-6 rounded-lg;
+}
+
+/* Form Responsive */
+.form-responsive {
+  @apply space-y-4 sm:space-y-6;
+}
+
+.input-responsive {
+  @apply px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-lg;
+}
+
+/* Flex Responsive */
+.flex-responsive-col {
+  @apply flex flex-col sm:flex-row gap-4 sm:gap-6;
+}
+
+.flex-responsive-center {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6;
+}
+
+/* Image Responsive */
+.img-responsive {
+  @apply w-full h-auto object-cover;
+}
+
+.img-responsive-square {
+  @apply w-full aspect-square object-cover;
+}
+
+.img-responsive-video {
+  @apply w-full aspect-video object-cover;
+}
+
+/* Navigation Responsive */
+.nav-responsive {
+  @apply hidden lg:flex items-center space-x-1 xl:space-x-2;
+}
+
+.nav-item-responsive {
+  @apply px-2 py-2 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-sm lg:text-base;
+}
+
+/* Mobile-first utilities */
+.mobile-only {
+  @apply block sm:hidden;
+}
+
+.tablet-up {
+  @apply hidden sm:block;
+}
+
+.desktop-only {
+  @apply hidden lg:block;
+}
+
+.mobile-tablet {
+  @apply block lg:hidden;
+}
+
+/* Aspect ratios for responsive media */
+.aspect-responsive-video {
+  @apply aspect-video;
+}
+
+.aspect-responsive-square {
+  @apply aspect-square;
+}
+
+.aspect-responsive-portrait {
+  @apply aspect-[3/4];
+}
+
+.aspect-responsive-landscape {
+  @apply aspect-[4/3];
+}
+
+/* Responsive visibility */
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Solar-specific responsive utilities */
+.hero-responsive {
+  @apply h-[500px] sm:h-[600px] lg:h-[700px];
+}
+
+.solar-card-responsive {
+  @apply p-3 sm:p-4 lg:p-6 min-h-[80px] sm:min-h-[100px] lg:min-h-[120px];
+}
+
+.solar-gradient-responsive {
+  @apply bg-solar-gradient text-white;
+}
+
+/* Focus and hover states for accessibility */
+.focus-responsive {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+.hover-responsive {
+  @apply hover:scale-105 transition-transform duration-200;
+}

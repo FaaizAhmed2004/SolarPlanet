@@ -27,7 +27,7 @@ export default function BatteryStorage  () {
 
       {/* Question Section */}
       <div className="text-center py-8">
-        <h2 className="text-red-600 font-medium tracking-wide">ARE YOU THINKING ABOUT INSTALLING A HOME BATTERY?</h2>
+        <h2 className="text-primary font-medium tracking-wide">ARE YOU THINKING ABOUT INSTALLING A HOME BATTERY?</h2>
       </div>
 
       {/* Main Heading */}
@@ -99,7 +99,7 @@ export default function BatteryStorage  () {
         </div>
       </div>
 
-      <div className="space-y-6 mb-8 text-sm">
+      <div className="space-content mb-8 text-sm">
         <p>
           A <span className="text-blue-800">solar system</span> is a 'use it or lose it' resource. If your{" "}
           <span className="text-blue-800">solar system</span> generates more{" "}
@@ -134,7 +134,7 @@ export default function BatteryStorage  () {
 
       <div className="text-center mb-8">
         <h2 className="text-xl font-bold">
-          EXCITING NEWS: <span className="text-red-600">Tesla Powerwall 3 is here!</span>
+          EXCITING NEWS: <span className="text-primary">Tesla Powerwall 3 is here!</span>
         </h2>
       </div>
 
@@ -157,10 +157,10 @@ export default function BatteryStorage  () {
 
 
 
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="page-container py-8">
       {/* Experience Statement */}
       <div className="text-center mb-12">
-        <p className="text-xl font-semibold text-slate-800 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-xl font-semibold text-slate-800 max-w-4xl mx-auto text-pretty leading-relaxed">
           We are proudly one of Victoria's most experienced and longest-running battery system installers, having
           installed hundreds of high-quality battery systems over the past 15 years.
         </p>
@@ -169,7 +169,7 @@ export default function BatteryStorage  () {
       {/* Content Grid */}
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Left Column - Text Content */}
-        <div className="space-y-6 text-sm">
+        <div className="space-content text-sm">
           <p>
             At <span className="text-blue-800">Total Solar</span> we know that every home is different which is why we
             offer great battery options to suit your particular needs including Tesla Powerwall, BYD and Enphase.
@@ -200,18 +200,18 @@ export default function BatteryStorage  () {
             </div>
 
             {/* Tesla Certified Installer Logo */}
-            <div className="absolute -right-10 top-1/4 bg-white p-3 rounded-lg shadow-md">
+            <div className="absolute -right-10 top-1/4 bg-background p-3 rounded-lg shadow-md">
               <div className="text-center">
-                <p className="text-gray-500 text-xs">TESLA</p>
+                <p className="text-subtle text-xs">TESLA</p>
                 <p className="font-semibold text-sm">POWERWALL</p>
-                <p className="text-xs text-gray-500 mt-1">CERTIFIED INSTALLER</p>
+                <p className="text-xs text-subtle mt-1">CERTIFIED INSTALLER</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="page-container py-8">
       {/* Main Heading */}
       <h2 className="text-2xl font-bold text-center text-slate-800 mb-4">BYD Battery Box</h2>
 
@@ -224,10 +224,10 @@ export default function BatteryStorage  () {
       </p>
 
       {/* Product Line Heading */}
-      <h3 className="text-center text-red-600 font-medium tracking-wide mb-6">BATTERY-BOX PREMIUM HVS/HVM</h3>
+      <h3 className="text-center text-primary font-medium tracking-wide mb-6">BATTERY-BOX PREMIUM HVS/HVM</h3>
 
       {/* Product Description */}
-      <div className="space-y-4 mb-8 text-sm">
+      <div className="space-content mb-8 text-sm">
         <p className="text-center">
           The <span className="text-blue-800">B-Box Premium HVS/HVM Series</span> are scalable modules capable of{" "}
           <span className="text-blue-800">high-powered emergency backup</span>. They provide off-grid functionality, and
@@ -309,10 +309,10 @@ export default function BatteryStorage  () {
         </div>
       </div>
     </div>
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="page-container py-8">
       <div className="grid md:grid-cols-2 gap-6">
         {/* Left image - Inverter and Battery System */}
-        <div className="bg-gray-100 rounded-lg overflow-hidden">
+        <div className="bg-muted rounded-lg overflow-hidden">
           <Image
             src="/images/fan.jpg"
             alt="Fronius inverter and BYD Battery Box storage system"
@@ -320,13 +320,13 @@ export default function BatteryStorage  () {
             height={400}
             className="object-contain w-full h-auto"
           />
-          <div className="p-3 text-sm text-center text-gray-600">
+          <div className="p-3 text-sm text-center text-readable">
             Fronius inverter (left) with BYD Battery Box storage system (right)
           </div>
         </div>
 
         {/* Right image - Battery System */}
-        <div className="bg-gray-100 rounded-lg overflow-hidden">
+        <div className="bg-muted rounded-lg overflow-hidden">
           <div className="flex justify-center">
             <Image
               src="/images/wall.jpg"
@@ -336,11 +336,11 @@ export default function BatteryStorage  () {
               className="object-contain w-full h-auto"
             />
           </div>
-          <div className="p-3 text-sm text-center text-gray-600">BYD Battery Box Premium storage system</div>
+          <div className="p-3 text-sm text-center text-readable">BYD Battery Box Premium storage system</div>
         </div>
       </div>
 
-      <div className="mt-6 text-sm text-center text-gray-700">
+      <div className="mt-6 text-sm text-center text-readable">
         <p>Our battery storage solutions are designed for seamless integration with your home's power system</p>
       </div>
     </div>

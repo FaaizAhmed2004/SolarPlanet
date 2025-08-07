@@ -40,11 +40,7 @@ const navItems = [
     icon: BellIcon,
     href: "/dashboard/notifications",
   },
-  {
-    title: "Solar Quotes",
-    icon: SunIcon,
-    href: "/dashboard/quotes",
-  },
+
   {
     title: "Settings",
     icon: Settings,

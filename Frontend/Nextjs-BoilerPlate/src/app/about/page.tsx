@@ -30,11 +30,11 @@ export default function AboutUsPage() {
   ]
 
   return (
-    <>
-    <Navbar/>
-    <div className="bg-white">
+    <main className="min-h-screen bg-background">
+      <Navbar/>
+      
       {/* Hero Banner */}
-      <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+      <section className="relative w-full h-[400px] md:h-[500px] overflow-hidden section-clear layout-safe">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -42,86 +42,89 @@ export default function AboutUsPage() {
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="hero-overlay"></div>
         </div>
-        <div className="relative h-full flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center px-4">About Us</h1>
+        <div className="relative h-full flex items-center justify-center z-20">
+          <h1 className="hero-title px-4">About Us</h1>
         </div>
-      </div>
+      </section>
 
       {/* Personal Approach Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-xl md:text-2xl font-semibold text-red-600 text-center mb-12">
+      <section className="section-clear section-separator">
+        <div className="page-container section-padding">
+        <h2 className="text-xl md:text-2xl font-semibold text-primary text-center mb-12 text-balance">
           LOOKING FOR A COMPANY THAT KNOWS YOU BY NAME?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800">Our Story</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Total Solar Solutions was established by electrician Reece Kennedy when he recognized the growing need for
-              quality solar installations in Victoria. With a background in electrical work and a passion for renewable
-              energy, Reece built a team of dedicated professionals committed to providing exceptional service.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Since our founding, we've grown from a small operation to a full-service solar and electrical company,
-              serving residential and commercial clients throughout Victoria. Our growth has been built on our
-              reputation for quality workmanship, honest advice, and personalized service.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Despite our growth, we've maintained our commitment to knowing each customer by name and treating every
-              project with the same care and attention to detail that we would for our own homes and businesses.
-            </p>
+        <div className="grid-2-col">
+          <div className="space-content">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Our Story</h3>
+            <div className="space-content">
+              <p className="text-readable text-pretty">
+                The Energy Planet was established by electrician Reece Kennedy when he recognized the growing need for
+                quality solar installations in Victoria. With a background in electrical work and a passion for renewable
+                energy, Reece built a team of dedicated professionals committed to providing exceptional service.
+              </p>
+              <p className="text-readable text-pretty">
+                Since our founding, we've grown from a small operation to a full-service solar and electrical company,
+                serving residential and commercial clients throughout Victoria. Our growth has been built on our
+                reputation for quality workmanship, honest advice, and personalized service.
+              </p>
+              <p className="text-readable text-pretty">
+                Despite our growth, we've maintained our commitment to knowing each customer by name and treating every
+                project with the same care and attention to detail that we would for our own homes and businesses.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-              What is the Total Solar Solutions experience?
+          <div className="content-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-balance">
+              What is The Energy Planet experience?
             </h3>
-            <div className="space-y-4">
+            <div className="space-content">
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold">1</span>
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary font-bold">1</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Personal Consultation</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-semibold text-foreground mb-2">Personal Consultation</h4>
+                  <p className="text-readable">
                     We take the time to understand your energy needs and goals before recommending solutions.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold">2</span>
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary font-bold">2</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Custom Design</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-semibold text-foreground mb-2">Custom Design</h4>
+                  <p className="text-readable">
                     Our team designs a system specifically for your property and energy requirements.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold">3</span>
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary font-bold">3</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Quality Installation</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-semibold text-foreground mb-2">Quality Installation</h4>
+                  <p className="text-readable">
                     Our certified installers ensure your system is installed to the highest standards.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold">4</span>
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-primary font-bold">4</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Ongoing Support</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-semibold text-foreground mb-2">Ongoing Support</h4>
+                  <p className="text-readable">
                     We're here for you long after installation with maintenance and support services.
                   </p>
                 </div>
@@ -129,18 +132,20 @@ export default function AboutUsPage() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </section>
 
       {/* Our Values */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Our Values</h2>
+      <section className="bg-muted/50 section-clear section-separator">
+        <div className="section-padding">
+        <div className="page-container">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12 text-balance">Our Values</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4 mx-auto">
+          <div className="grid-responsive">
+            <div className="card-hover card-padding content-center">
+              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6">
                 <svg
-                  className="w-6 h-6 text-red-600"
+                  className="w-6 h-6 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -149,16 +154,16 @@ export default function AboutUsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 text-center mb-3">Quality</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-xl font-semibold text-foreground mb-4">Quality</h3>
+              <p className="text-readable text-center">
                 We never compromise on the quality of our products, installations, or service.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4 mx-auto">
+            <div className="card-hover card-padding content-center">
+              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6">
                 <svg
-                  className="w-6 h-6 text-red-600"
+                  className="w-6 h-6 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -172,16 +177,16 @@ export default function AboutUsPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 text-center mb-3">Personal Service</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-xl font-semibold text-foreground mb-4">Personal Service</h3>
+              <p className="text-readable text-center">
                 We treat every customer as an individual with unique needs and preferences.
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4 mx-auto">
+            <div className="card-hover card-padding content-center">
+              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6">
                 <svg
-                  className="w-6 h-6 text-red-600"
+                  className="w-6 h-6 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -195,31 +200,33 @@ export default function AboutUsPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 text-center mb-3">Sustainability</h3>
-              <p className="text-gray-600 text-center">
+              <h3 className="text-xl font-semibold text-foreground mb-4">Sustainability</h3>
+              <p className="text-readable text-center">
                 We're committed to promoting renewable energy and sustainable practices.
               </p>
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </section>
 
       {/* Meet Our Team */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">Meet Our Team</h2>
-        <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+      <section className="section-clear section-separator">
+        <div className="page-container section-padding">
+        <h2 className="text-3xl font-bold text-foreground text-center mb-4">Meet Our Team</h2>
+        <p className="text-readable text-center max-w-3xl mx-auto mb-12">
           Our dedicated team of professionals is committed to providing you with the best solar solutions and customer
           service.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div className="h-48 bg-gray-200"></div>
+            <div key={index} className="bg-card rounded-lg overflow-hidden shadow-md border border-border">
+              <div className="h-48 bg-muted"></div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">{member.name}</h3>
-                <p className="text-red-600 font-medium text-sm mb-3">{member.position}</p>
-                <p className="text-gray-600 text-sm">{member.description}</p>
+                <h3 className="text-xl font-semibold text-card-foreground mb-1">{member.name}</h3>
+                <p className="text-primary font-medium text-sm mb-3">{member.position}</p>
+                <p className="text-readable text-sm">{member.description}</p>
               </div>
             </div>
           ))}
@@ -228,22 +235,24 @@ export default function AboutUsPage() {
         <div className="text-center mt-12">
           <Link
             href="/contact"
-            className="inline-block px-8 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors shadow-md"
+            className="inline-block px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-full transition-colors shadow-md cursor-pointer"
           >
             Contact Our Team
           </Link>
         </div>
-      </div>
+        </div>
+      </section>
 
       {/* Testimonials */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">What Our Customers Say</h2>
+      <section className="bg-muted/50 section-clear section-separator">
+        <div className="section-padding">
+        <div className="page-container">
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">What Our Customers Say</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="card-hover card-padding">
               <div className="flex items-center mb-4">
-                <div className="flex text-yellow-400">
+                <div className="flex text-accent">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
@@ -257,16 +266,16 @@ export default function AboutUsPage() {
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 italic mb-4">
-                "Total Solar Solutions made the entire process so easy. From the initial consultation to the
+              <p className="text-readable italic mb-4">
+                "The Energy Planet made the entire process so easy. From the initial consultation to the
                 installation, everything was handled professionally. Our energy bills have been cut in half!"
               </p>
-              <p className="font-semibold text-gray-800">- David & Sarah M., Bayswater</p>
+              <p className="font-semibold text-card-foreground">- David & Sarah M., Bayswater</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="card-hover card-padding">
               <div className="flex items-center mb-4">
-                <div className="flex text-yellow-400">
+                <div className="flex text-accent">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
@@ -280,17 +289,17 @@ export default function AboutUsPage() {
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 italic mb-4">
-                "We had solar installed for our business by Total Solar Solutions. The team was knowledgeable and
+              <p className="text-readable italic mb-4">
+                "We had solar installed for our business by The Energy Planet. The team was knowledgeable and
                 efficient. The system has been performing excellently and has significantly reduced our operating
                 costs."
               </p>
-              <p className="font-semibold text-gray-800">- John T., Melbourne Business Owner</p>
+              <p className="font-semibold text-card-foreground">- John T., Melbourne Business Owner</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="card-hover card-padding">
               <div className="flex items-center mb-4">
-                <div className="flex text-yellow-400">
+                <div className="flex text-accent">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
@@ -304,22 +313,27 @@ export default function AboutUsPage() {
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 italic mb-4">
+              <p className="text-readable italic mb-4">
                 "What impressed me most was how they took the time to explain everything. They weren't just trying to
                 sell me the biggest system, but the right system for my needs. Highly recommend!"
               </p>
-              <p className="font-semibold text-gray-800">- Lisa K., Ringwood</p>
+              <p className="font-semibold text-card-foreground">- Lisa K., Ringwood</p>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* CTA Section */}
-
         </div>
+      </section>
+
+      {/* Quote Request Section */}
+      <section className="section-clear section-separator">
         <QuoteRequestForm/>
+      </section>
+      
+      {/* Footer */}
+      <footer className="relative z-10">
         <Footer/>
-    </>
+      </footer>
+    </main>
   )
 }
 

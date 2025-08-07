@@ -7,7 +7,7 @@ export function DashboardStats() {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-sm font-medium">Total Leads</CardTitle>
-          <Users className="h-4 w-4 text-muted-foreground" />
+          <Users className="h-4 w-4 text-readable" />
         </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold">2,853</div>
@@ -20,7 +20,7 @@ export function DashboardStats() {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-sm font-medium">Conversion Rate</CardTitle>
-          <TrendingUp className="h-4 w-4 text-muted-foreground" />
+          <TrendingUp className="h-4 w-4 text-readable" />
         </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold">24.5%</div>
@@ -32,8 +32,8 @@ export function DashboardStats() {
       </Card>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
-          <CardTitle className="text-sm font-medium">Solar Installations</CardTitle>
-          <SunIcon className="h-4 w-4 text-muted-foreground" />
+          <CardTitle className="text-sm font-medium">Energy Installations</CardTitle>
+          <SunIcon className="h-4 w-4 text-readable" />
         </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold">187</div>
@@ -46,7 +46,7 @@ export function DashboardStats() {
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-sm font-medium">Revenue</CardTitle>
-          <DollarSign className="h-4 w-4 text-muted-foreground" />
+          <DollarSign className="h-4 w-4 text-readable" />
         </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold">$432,680</div>

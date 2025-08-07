@@ -1,19 +1,10 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import express from 'express';
-import { 
-  createQuote, 
-  getAllQuotes, 
-  getQuoteById, 
-  updateQuote, 
-  deleteQuote 
-} from '../Controller/controller'; // Adjust path if necessary
+import { submitQuote } from '../Controller/controller';
 
-const Feedbackrouter = express.Router();
+const QuoteRouter = express.Router();
 
-Feedbackrouter.post('/', createQuote); // Create a new quote
-Feedbackrouter.get('/', getAllQuotes); // Get all quotes
-Feedbackrouter.get('/:id', getQuoteById); // Get a quote by ID
-Feedbackrouter.put('/:id', updateQuote); // Update a quote by ID
-Feedbackrouter.delete('/:id', deleteQuote); // Delete a quote by ID
+// Submit quote request via email
+QuoteRouter.post('/', submitQuote);
 
-export default Feedbackrouter;
+export default QuoteRouter;

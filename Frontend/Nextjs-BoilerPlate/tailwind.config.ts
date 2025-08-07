@@ -59,12 +59,54 @@ const config: Config = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			// Solar Energy Theme Colors
+  			solar: {
+  				orange: 'hsl(var(--solar-orange))',
+  				yellow: 'hsl(var(--solar-yellow))',
+  				blue: 'hsl(var(--sky-blue))',
+  				green: 'hsl(var(--forest-green))',
+  				brown: 'hsl(var(--earth-brown))',
+  				'deep-blue': 'hsl(var(--deep-blue))'
   			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		spacing: {
+  			'xs': 'var(--spacing-xs)',
+  			'sm': 'var(--spacing-sm)',
+  			'md': 'var(--spacing-md)',
+  			'lg': 'var(--spacing-lg)',
+  			'xl': 'var(--spacing-xl)',
+  			'2xl': 'var(--spacing-2xl)',
+  			'3xl': 'var(--spacing-3xl)',
+  			'section': 'var(--section-spacing)',
+  			'component': 'var(--component-spacing)',
+  			'element': 'var(--element-spacing)'
+  		},
+  		zIndex: {
+  			'dropdown': '1000',
+  			'sticky': '1020',
+  			'fixed': '1030',
+  			'modal-backdrop': '1040',
+  			'modal': '1050',
+  			'popover': '1060',
+  			'tooltip': '1070',
+  			'toast': '1080'
+  		},
+  		maxWidth: {
+  			'container': 'var(--max-width)'
+  		},
+  		screens: {
+  			'xs': '475px',
+  			'sm': '640px',
+  			'md': '768px',
+  			'lg': '1024px',
+  			'xl': '1280px',
+  			'2xl': '1536px'
   		}
   	}
   },

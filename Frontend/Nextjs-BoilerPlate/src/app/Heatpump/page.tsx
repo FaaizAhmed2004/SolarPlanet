@@ -15,15 +15,15 @@ export default function HeatPumpPage() {
     {
       id: 1,
       title: "Why A Reclaim\nHeat Pump",
-      bgColor: "bg-white",
-      textColor: "text-red-600",
+      bgColor: "bg-background",
+      textColor: "text-primary",
       content:
         "A Reclaim Energy Heat Pump Hot Water System requires much less electricity to heat water when compared to conventional hot water systems.\n\nIn Australia, our electricity prices continue to increase, and an electric hot water system contributes significantly to a household's energy costs. Comprehensive savings can be made by using a more efficient hot water system, up to 80% on conventional electric system.\n\nReclaim Energy CO2 Heat Pumps use natural refrigerant (CO2) which is environmentally friendly with a Global Warming Potential (GWP) of 1, compared to other refrigerants that have GWP values in the thousands. This makes our heat pumps one of the most environmentally friendly water heating options available.",
     },
     {
       id: 2,
       title: "How The System\nWorks",
-      bgColor: "bg-amber-400",
+      bgColor: "bg-accent",
       textColor: "text-white",
       content:
         "The Reclaim Energy CO2 heat pump works by extracting heat from the air and transferring it to water. Even in cold temperatures, there is still heat energy in the air that can be captured.\n\nThe system uses a compressor to pressurize CO2 refrigerant, which raises its temperature. This hot refrigerant then passes through a heat exchanger where it transfers its heat to the water in your tank. The CO2 refrigerant cools down and the cycle continues.\n\nUnlike conventional electric water heaters that convert electricity directly into heat, our heat pump uses electricity only to run the compressor and move heat from the air to your water. This is why it can achieve efficiency levels of up to 400%, meaning for every unit of electricity used, it can produce up to 4 units of heat energy.",
@@ -39,7 +39,7 @@ export default function HeatPumpPage() {
     {
       id: 4,
       title: "Smart Controller",
-      bgColor: "bg-red-600",
+      bgColor: "bg-primary",
       textColor: "text-white",
       content:
         "The Reclaim Energy Smart Controller provides intelligent management of your hot water system for maximum efficiency and convenience.\n\nFeatures include:\n\n• Intuitive touchscreen interface for easy operation\n\n• Multiple operating modes including Economy, Standard, and Boost\n\n• Programmable timer function to heat water during off-peak electricity periods\n\n• Vacation mode to save energy while you're away\n\n• Legionella prevention cycle for health and safety\n\n• System monitoring with fault detection and notification\n\n• Optional Wi-Fi connectivity for remote control via smartphone app (additional module required)",
@@ -63,7 +63,7 @@ export default function HeatPumpPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-white text-zinc-900">
+    <main className="min-h-screen bg-background text-zinc-900">
       <Navbar/>
       {/* Hero Section */}
       <div className="relative h-[600px] w-full">
@@ -101,7 +101,7 @@ export default function HeatPumpPage() {
               >
                 <h3 className={`${card.textColor} text-center font-medium whitespace-pre-line`}>{card.title}</h3>
 
-                {card.id === 1 && <ChevronDown className="text-red-600 mt-2 h-5 w-5" />}
+                {card.id === 1 && <ChevronDown className="text-primary mt-2 h-5 w-5" />}
               </motion.div>
             ))}
           </div>
@@ -109,8 +109,8 @@ export default function HeatPumpPage() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-4xl mx-auto py-16 px-4">
-        <h2 className="text-center text-red-600 uppercase tracking-wider font-medium mb-8">Why a Reclaim Heat Pump</h2>
+      <div className="max-w-4xl mx-auto section-padding px-4">
+        <h2 className="text-center text-primary uppercase tracking-wider font-medium mb-8">Why a Reclaim Heat Pump</h2>
 
         <AnimatePresence mode="wait">
           {activeCard && (
@@ -123,7 +123,7 @@ export default function HeatPumpPage() {
               className="mb-12"
             >
               <motion.div
-                className="text-lg leading-relaxed"
+                className="text-lg text-pretty leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
