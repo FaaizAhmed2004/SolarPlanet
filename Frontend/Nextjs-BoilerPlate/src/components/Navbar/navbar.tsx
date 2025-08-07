@@ -36,7 +36,7 @@ const Navbar = () => {
       <nav className="relative z-fixed bg-background border-b border-border text-foreground shadow-lg layout-safe">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 sm:h-16">
-            
+
             {/* Brand/Logo Area */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center px-2 sm:px-3 py-1.5 hover:bg-accent/20 rounded-lg transition-all duration-200 cursor-pointer">
@@ -52,9 +52,9 @@ const Navbar = () => {
               </Link>
 
               <div className="relative">
-                <button 
+                <button
                   type="button"
-                  onClick={toggleBatteryDropdown} 
+                  onClick={toggleBatteryDropdown}
                   className="flex items-center px-2 xl:px-3 py-1.5 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs cursor-pointer"
                 >
                   Battery Storage
@@ -86,9 +86,9 @@ const Navbar = () => {
               </Link>
 
               <div className="relative">
-                <button 
+                <button
                   type="button"
-                  onClick={toggleInfoDropdown} 
+                  onClick={toggleInfoDropdown}
                   className="flex items-center px-2 xl:px-3 py-1.5 hover:bg-accent/20 rounded-lg transition-all duration-200 font-medium text-xs cursor-pointer"
                 >
                   More
@@ -126,8 +126,8 @@ const Navbar = () => {
             {/* Right side - Phone and Mobile Menu */}
             <div className="flex items-center space-x-2">
               {/* Phone Number */}
-              <a 
-                href="tel:+61433866320" 
+              <a
+                href="tel:+61433866320"
                 className="hidden sm:flex items-center gap-1.5 px-2 sm:px-3 py-1.5 hover:bg-accent/20 rounded-lg transition-all duration-200 font-semibold text-xs text-primary cursor-pointer"
               >
                 <Phone size={14} />
@@ -135,9 +135,9 @@ const Navbar = () => {
               </a>
 
               {/* Mobile Menu Button */}
-              <button 
+              <button
                 type="button"
-                className="lg:hidden p-2 hover:bg-accent/20 rounded-lg transition-all duration-200 cursor-pointer" 
+                className="lg:hidden p-2 hover:bg-accent/20 rounded-lg transition-all duration-200 cursor-pointer"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle mobile menu"
               >

@@ -17,6 +17,7 @@
   - Reduce card spacing variables (gap-8 → gap-6, gap-6 → gap-4)
 
 
+
   - Update .card-title and .card-content utilities with smaller fonts
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
