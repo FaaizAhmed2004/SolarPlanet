@@ -26,7 +26,7 @@ export default function Footer() {
                 <path d="M12 5.83V4"></path>
               </svg>
             </div>
-            <h3 className="font-bold text-sm text-white">Amazing Customer Service</h3>
+            <h3 className="font-bold text-xs text-white">Amazing Customer Service</h3>
             <p className="text-xs text-white/90">100% Satisfaction</p>
           </div>
 
@@ -166,7 +166,7 @@ export default function Footer() {
           {/* Column 1 - Company Info */}
           <div className="space-content">
             {/* Company Logo */}
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <Image
                 src="/images/solarplanetlogo.png"
                 alt="Solar Planet Australia Logo"
@@ -174,8 +174,8 @@ export default function Footer() {
                 height={60}
                 className="h-12 w-auto"
               />
-            </div>
-            
+            </div> */}
+
             <h2 className="text-sm font-bold uppercase tracking-wider">The Energy Planet Australia</h2>
             <p className="text-sm">
               The Energy Planet Australia is a fully owned and operated Australian company that employs well-trained
@@ -380,7 +380,7 @@ export default function Footer() {
 
           <div className="hidden md:block">
             <p className="text-xs flex items-center">
-               website made by
+              website made by
               <span className="text-yellow-500 mx-1">Faaiz Ahmed</span>
             </p>
           </div>

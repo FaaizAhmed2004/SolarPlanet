@@ -163,16 +163,16 @@
     @apply flex flex-col items-end justify-end text-right;
   }
   
-  /* Grid layouts */
+  /* Optimized grid layouts */
   .grid-responsive {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4;
   }
   
   .grid-2-col {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center;
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center;
   }
   
-  /* Card layouts */
+  /* Optimized card layouts */
   .card-base {
     @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm;
   }
@@ -182,7 +182,19 @@
   }
   
   .card-padding {
-    @apply p-6 md:p-8;
+    @apply p-3 md:p-4;
+  }
+  
+  .card-compact {
+    @apply p-2 md:p-3;
+  }
+  
+  .card-title {
+    @apply text-base md:text-lg font-semibold;
+  }
+  
+  .card-content {
+    @apply text-xs md:text-sm text-muted-foreground;
   }
   
   /* Text alignment utilities */
@@ -194,14 +206,14 @@
     text-wrap: pretty;
   }
   
-  /* ===== ENHANCED SPACING UTILITIES ===== */
+  /* ===== OPTIMIZED SPACING UTILITIES ===== */
   .space-section {
-    @apply space-y-8 md:space-y-12;
+    @apply space-y-4 md:space-y-6;
     gap: var(--section-spacing);
   }
   
   .space-content {
-    @apply space-y-4 md:space-y-6;
+    @apply space-y-2 md:space-y-3;
     gap: var(--component-spacing);
   }
   
@@ -390,19 +402,19 @@
     --sidebar-border: 210 40% 85%;
     --sidebar-ring: 200 95% 45%;
     
-    /* ===== SPACING SYSTEM ===== */
-    --spacing-xs: 0.5rem;    /* 8px */
-    --spacing-sm: 1rem;      /* 16px */
-    --spacing-md: 1.5rem;    /* 24px */
-    --spacing-lg: 2rem;      /* 32px */
-    --spacing-xl: 3rem;      /* 48px */
-    --spacing-2xl: 4rem;     /* 64px */
-    --spacing-3xl: 6rem;     /* 96px */
+    /* ===== OPTIMIZED SPACING SYSTEM ===== */
+    --spacing-xs: 0.375rem;  /* 6px - Reduced */
+    --spacing-sm: 0.75rem;   /* 12px - Reduced */
+    --spacing-md: 1rem;      /* 16px - Reduced */
+    --spacing-lg: 1.5rem;    /* 24px - Reduced */
+    --spacing-xl: 2rem;      /* 32px - Reduced */
+    --spacing-2xl: 3rem;     /* 48px - Reduced */
+    --spacing-3xl: 4rem;     /* 64px - Reduced */
     
-    /* ===== LAYOUT SPACING ===== */
-    --section-spacing: var(--spacing-xl);
-    --component-spacing: var(--spacing-lg);
-    --element-spacing: var(--spacing-md);
+    /* ===== OPTIMIZED LAYOUT SPACING ===== */
+    --section-spacing: var(--spacing-lg);
+    --component-spacing: var(--spacing-md);
+    --element-spacing: var(--spacing-sm);
     
     /* ===== CONTAINER SYSTEM ===== */
     --max-width: 1280px;
@@ -509,37 +521,38 @@
     margin: 0;
     padding: 0;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-size: 13px; /* Further reduced base font size */
   }
   
   main {
     @apply min-h-screen bg-background text-foreground;
   }
   
-  /* Enhanced text hierarchy */
+  /* Optimized text hierarchy - Significantly reduced font sizes */
   h1, h2, h3, h4, h5, h6 {
     @apply text-foreground font-semibold;
-    line-height: 1.2;
+    line-height: 1.3;
   }
   
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-  }
-  
-  h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
-  }
-  
-  h3 {
     @apply text-xl md:text-2xl lg:text-3xl;
   }
   
+  h2 {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  h3 {
+    @apply text-base md:text-lg lg:text-xl;
+  }
+  
   h4 {
-    @apply text-lg md:text-xl;
+    @apply text-sm md:text-base;
   }
   
   p {
-    @apply text-muted-foreground leading-relaxed;
-    line-height: 1.6;
+    @apply text-xs md:text-sm text-muted-foreground leading-relaxed;
+    line-height: 1.5;
   }
   
   /* Enhanced link styles */
