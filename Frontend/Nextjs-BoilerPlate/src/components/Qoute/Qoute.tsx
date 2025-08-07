@@ -60,7 +60,6 @@ export default function QuoteRequestForm() {
         return
       }
 
-<<<<<<< HEAD
       if (!formData.email.trim() || !formData.email.includes('@')) {
         setSubmitStatus({ success: false, message: "Please enter a valid email address." })
         setIsSubmitting(false)
@@ -104,9 +103,6 @@ export default function QuoteRequestForm() {
       const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
       const response = await fetch("/api/quote", {
-=======
-      const response = await fetch("https://solar-ten-liart.vercel.app/v1/Quote", {
->>>>>>> c96e89feb4d7788d10077de93c61bbd304eec7e9
         method: "POST",
         headers: {
           "Content-Type": "application/json",
